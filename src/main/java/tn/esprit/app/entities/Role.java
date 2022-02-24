@@ -1,15 +1,17 @@
 package tn.esprit.app.entities;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
+
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,24 +25,15 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User implements Serializable {
+public class Role implements Serializable {
 
-	/**
-	 * 
-	 */
 	static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
 	Long id;
-	String firstName;
-	String lastName;
-	String userName;
-	String email;
-	String pwd;
-	String picture;
-	Boolean active;
-	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
-	Set<Role> roles;
+	@ManyToMany(cascade = CascadeType.PERSIST, mappedBy = "roles")
+	List<User> users;
+	@Enumerated(EnumType.STRING)
+	RoleName role;
 
 }
