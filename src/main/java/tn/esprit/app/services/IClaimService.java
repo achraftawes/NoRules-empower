@@ -21,11 +21,7 @@ public interface IClaimService {
 	public Long addOrUpdateClaim(Claim claim) ;
 	public Claim getClaimById(long id);
 	
-	/*
-	public List<Claim> getLastClaims(User user) ;
-	public List<Claim> findByTypeClaimsOrderByPostedDesc(TypeClaim typeClaim);
-	public List<Claim> findReclamationsBySender(User sender);
-	public List<Claim> searchClaim(String msg);*/
+
 	
 	
 
