@@ -16,6 +16,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -61,6 +63,7 @@ public class Training {
 
 	
 	@ManyToMany
+	@JsonIgnore
 	private Set<Learner> learners ;
 	
 	@ManyToOne

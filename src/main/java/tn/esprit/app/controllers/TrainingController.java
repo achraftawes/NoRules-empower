@@ -28,9 +28,12 @@ public class TrainingController {
 	// http://localhost:8086/SheApp/training/add-training
 		@PostMapping("/add-training")
 		@ResponseBody
-		public void addTraining(@RequestBody  Training training) throws Exception {
-			
+		public String addTraining(@RequestBody  Training training) throws Exception {
+			try {
 			trainingS.addTraining(training);
+			return "added";
+			}catch (Exception e) {
+				return "Training exist ";}
 		}
 	
 	// http://localhost:8086/SheApp/training/retrieve-all-trainings
@@ -84,7 +87,15 @@ public class TrainingController {
 			catch (Exception e) {
 				return "This Training is no longer available Maximum Number of participants Reached ";
 				
-		}
+				}
 		
-		}
+		    }
+		
+		// http://localhost:8086/SheApp/training/retrieve-TrainingByTitle/
+		
+				@GetMapping("/retrieve-TrainingByTitle/{title}")
+				@ResponseBody
+				public List<Training> SearchTraining(@PathVariable("title") String Title){
+					return trainingS.SearchTraining(Title);
+				}
 }

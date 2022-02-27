@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import tn.esprit.app.entities.Former;
 import tn.esprit.app.entities.Learner;
 import tn.esprit.app.entities.Training;
@@ -26,12 +27,15 @@ public class TrainingServiceImpl implements ITrainingService{
 	
 	@Override
 	public void addTraining(Training training) throws Exception {
-		if ((null != trainingR.findByTitle(training.getTitle()))) {
 			
-			//(null!=trainingR.findByLevel(training.getLevel()))
 			
-            throw new Exception("there is a training with the same Title " + training.getTitle());
-        }
+			if ( null!=trainingR.findByTitleAndLevel(training.getTitle(), training.getLevel())){
+				
+			
+
+            throw new Exception("there is a training" + training.getTitle()+"with the same level"+training.getLevel());
+        
+			}
         
         trainingR.save(training);
 		
@@ -97,8 +101,12 @@ public class TrainingServiceImpl implements ITrainingService{
 		trainingR.save(training);
 		
 		}
-		throw new Exception("This Training is no longer available Maximum Number of participants Reached");
+		throw new Exception("This Training is no longer seats   of participants Reached");
 
 		
+	}
+	@Override
+	public List<Training> SearchTraining(String Title) {
+		return trainingR.SearchTraining(Title);
 	}
 }

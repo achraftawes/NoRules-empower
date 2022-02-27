@@ -15,5 +15,6 @@ public interface ITrainingService {
 	String deleteTraining(Long id);
 	void AssignFormerToTraining(Long idTraining , Long idFormer) throws Exception;
 	void AssignLearnerToTraining(Long idLearner, Long idTraining) throws Exception;
+	 List<Training> SearchTraining(String Title);
 	
 }
