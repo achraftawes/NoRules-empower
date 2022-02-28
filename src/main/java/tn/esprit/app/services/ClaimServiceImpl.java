@@ -52,6 +52,13 @@ public class ClaimServiceImpl implements IClaimService{
 	public Claim getClaimById(long id) {
 		return claimR.getClaimById(id);
 	}
+
+
+	@Override
+	public List<Claim> getClaimOrderByDESC() {
+		
+		return claimR.findClaimOrderByPostedDesc();
+	}
 	
 	
 	

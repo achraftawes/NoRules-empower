@@ -20,6 +20,7 @@ public interface IClaimService {
 	 public void deleteClaim(long id);
 	public Long addOrUpdateClaim(Claim claim) ;
 	public Claim getClaimById(long id);
+	List<Claim> getClaimOrderByDESC();
 	
 
 	

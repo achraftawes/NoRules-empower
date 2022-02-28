@@ -33,6 +33,7 @@ public class Learner {
 	private String imgLearner;
 	private String email;
 	
+	
 	@ManyToMany (mappedBy="learners")
 	@JsonIgnore
 	private Set<Training> trainings ;

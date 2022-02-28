@@ -71,5 +71,12 @@ public class ClaimController {
 			return claimS.getClaimById(id);
 					
 		}
-
+		
+		// http://localhost:8086/SheApp/claim/retrieve-ClaimPostedDateDesc
+		
+		@GetMapping("/retrieve-ClaimPostedDateDesc")
+		@ResponseBody
+		public  List<Claim> getClaimByDateDesc(){
+			return claimS.getClaimOrderByDESC();
+		}
 }
