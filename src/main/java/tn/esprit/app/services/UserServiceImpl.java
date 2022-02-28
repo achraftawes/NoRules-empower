@@ -5,14 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-
 import tn.esprit.app.entities.User;
 import tn.esprit.app.repositories.UserRepository;
 
 @Service
 public class UserServiceImpl implements IUserService {
-	
+
 	@Autowired
 	private UserRepository userRepository;
 	BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();

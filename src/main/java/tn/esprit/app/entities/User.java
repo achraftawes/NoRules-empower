@@ -27,7 +27,7 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User implements Serializable {
+public class User extends Auditable<String> implements Serializable {
 
 	/**
 	 * 
