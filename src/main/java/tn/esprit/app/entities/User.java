@@ -1,6 +1,7 @@
 package tn.esprit.app.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -10,7 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-
+import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AccessLevel;
@@ -46,5 +47,7 @@ public class User implements Serializable {
 	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
 	Set<Role> roles;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+	List<Subscription> subscriptions;
 
 }
