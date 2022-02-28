@@ -9,7 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -35,11 +37,15 @@ public class Advertising implements Serializable {
 	Long idAdvertising;
 	String namePublication;
 	String canal;
+	@Temporal(TemporalType.DATE)
 	Date startDate;
+	@Temporal(TemporalType.DATE)
 	Date endDate;
 	int views;
 	int Price;
 	String Type;
 	
+	@ManyToOne
+	private Women WomenAd;
 	
 }
