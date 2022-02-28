@@ -23,6 +23,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/registration").permitAll().antMatchers("/retrieve-all-users")
-				.access("hasRole('ADMIN')").anyRequest().authenticated().and().httpBasic().and().csrf().disable();
+				.access("hasRole('ADMINISTRATOR')").anyRequest().authenticated().and().httpBasic().and().csrf().disable();
 	}
 }

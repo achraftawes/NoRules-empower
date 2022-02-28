@@ -29,7 +29,7 @@ public class MyUserDetailsService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 		User user = userService.findUserByUserName(userName);
 		List<GrantedAuthority> authorities = getUserAuthority(user.getRoles());
-		return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPwd(), user.getActive(),
+		return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPwd(), user.getActive(),
 				true, true, true, authorities);
 	}
 

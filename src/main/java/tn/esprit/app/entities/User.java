@@ -10,6 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -40,6 +43,7 @@ public class User implements Serializable {
 	String pwd;
 	String picture;
 	Boolean active;
+	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
 	Set<Role> roles;
 

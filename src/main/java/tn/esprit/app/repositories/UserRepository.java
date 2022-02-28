@@ -6,5 +6,5 @@ import tn.esprit.app.entities.User;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
-	User findByUserName(String email);
+	User findByUserName(String userName);
 }

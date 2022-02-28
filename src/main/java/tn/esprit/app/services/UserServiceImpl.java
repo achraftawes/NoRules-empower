@@ -5,12 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import tn.esprit.app.entities.User;
 import tn.esprit.app.repositories.UserRepository;
 
 @Service
 public class UserServiceImpl implements IUserService {
+	
 	@Autowired
 	private UserRepository userRepository;
 	BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
@@ -31,11 +33,6 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
-	public User addUser(User u) {
-		return userRepository.save(u);
-	}
-
-	@Override
 	public void deleteUser(Long id) {
 		User user = userRepository.findById(id).get();
 		userRepository.delete(user);
@@ -43,6 +40,7 @@ public class UserServiceImpl implements IUserService {
 
 	@Override
 	public User updateUser(User u) {
+		u.setPwd(bCryptPasswordEncoder.encode(u.getPwd()));
 		return userRepository.save(u);
 	}
 

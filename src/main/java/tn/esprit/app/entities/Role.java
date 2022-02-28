@@ -12,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,6 +33,7 @@ public class Role implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	Long id;
+	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.PERSIST, mappedBy = "roles")
 	List<User> users;
 	@Enumerated(EnumType.STRING)
