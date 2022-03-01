@@ -1,6 +1,7 @@
-package tn.esprit.app.entity;
+package tn.esprit.app.entities;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -35,9 +37,10 @@ private static final long serialVersionUID = 1L;
 	@Enumerated(EnumType.STRING)
 	private Speciality speciality;
 	
-	@ManyToOne
+	
+	@OneToMany( mappedBy="expert")
 	@JsonIgnore
-	Appointement appointement;
+	private Set<Appointement> appointement;
 	
 	
 }

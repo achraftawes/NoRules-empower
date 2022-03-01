@@ -1,8 +1,8 @@
-package tn.esprit.app.Service;
+package tn.esprit.app.Services;
 
 import java.util.List;
 
-import tn.esprit.app.entity.Charityevent;
+import tn.esprit.app.entities.Charityevent;
 
 public interface CharityeventService {
 	void addEvent(Charityevent c);

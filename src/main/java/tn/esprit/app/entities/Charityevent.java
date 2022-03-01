@@ -1,4 +1,4 @@
-package tn.esprit.app.entity;
+package tn.esprit.app.entities;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -30,6 +29,5 @@ public class Charityevent implements Serializable {
 	private String Adress;
 	private int numberattendees;
 	private String imageEvent;
-	@OneToOne
-	SiteAdministrator siteAdministrator;
+	
 }

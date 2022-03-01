@@ -1,4 +1,4 @@
-package tn.esprit.app.Service;
+package tn.esprit.app.Services;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
-import tn.esprit.app.Repository.CharityeventRepository;
-import tn.esprit.app.entity.Charityevent;
+import tn.esprit.app.Repositories.CharityeventRepository;
+import tn.esprit.app.entities.Charityevent;
 @Slf4j
 @Service
 public class CharityeventServiceImpl implements CharityeventService {

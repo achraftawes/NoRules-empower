@@ -1,4 +1,4 @@
-package tn.esprit.app.Controller;
+package tn.esprit.app.Controllers;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import tn.esprit.app.Service.CharityeventService;
-import tn.esprit.app.entity.Charityevent;
+import tn.esprit.app.Services.CharityeventService;
+import tn.esprit.app.entities.Charityevent;
 
 @RestController
 @RequestMapping("/charityevent")

@@ -1,4 +1,4 @@
-package tn.esprit.app.entity;
+package tn.esprit.app.entities;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -32,12 +33,11 @@ public class Appointement implements Serializable {
 	private Date dateAppointement;
 	private String observation;
 	
-	@OneToMany( mappedBy="appointement")
+	@ManyToOne
 	@JsonIgnore
-	private Set<Expert> expert;
+	Expert expert;
 	
-	@OneToMany( mappedBy="appointement")
-	@JsonIgnore
-	private Set<Women> women;
+
+	
 
 }
