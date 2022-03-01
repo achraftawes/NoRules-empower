@@ -47,7 +47,6 @@ public class User extends Auditable<String> implements Serializable {
 	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
 	Set<Role> roles;
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-	List<Subscription> subscriptions;
+	
 
 }
