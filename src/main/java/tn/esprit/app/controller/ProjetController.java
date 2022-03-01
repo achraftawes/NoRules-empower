@@ -18,7 +18,7 @@ import tn.esprit.app.entities.Advertising;
 import tn.esprit.app.entities.Chat;
 import tn.esprit.app.entities.Comments;
 import tn.esprit.app.entities.Posts;
-import tn.esprit.app.entities.Women;
+
 import tn.esprit.app.service.IProjet;
 
 
@@ -248,46 +248,6 @@ public class ProjetController {
 	
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	
-	@ApiOperation(value = "Récuperer la liste des Women ")
-	@GetMapping("/retrieve-all-Women")
-	@ResponseBody
-	public List<Women> getWomens()  {
-	List<Women> listWomens = iprojet.retrieveAllWomens();
-	return listWomens;
-	}
-	
-	@ApiOperation(value = "Récuperer le Women de l'id mentionné  ")
-	@GetMapping("/retrieve-Women/{idWomen}")
-	@ResponseBody
-	public Women retrieveWomens(@PathVariable("idWomen") Long idWomen) {
-	return iprojet.retrieveWomen(idWomen);
-	}
-	
-	// http://localhost:8085/SpringMVC/client/add-client
-	@ApiOperation(value = "Ajouter un Women  ")
-	@PostMapping("/add-Women")
-	@ResponseBody
-	public Women Women(@RequestBody Women Women)
-	{
-		Women Womens = iprojet.addWomen(Women);
-	return Womens;
-	}
-	
-	// http://localhost:8085/SpringMVC/client/remove-client/{client-id}
-	@DeleteMapping("/remove-Women/{idWomen}")
-	@ResponseBody
-	public void removeWomens(@PathVariable("idWomen") Long idWomen) {
-	iprojet.deleteWomen(idWomen);
-	}
-	
-	// http://localhost:8085/SpringMVC/client/modify-client
-	@PutMapping("/modify-Women")
-	@ResponseBody
-	public Women modifyWomen(@RequestBody Women Women) {
-	return iprojet.updateWomen(Women);
-	}
-
 	
 	
 	

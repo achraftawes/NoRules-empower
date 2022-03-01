@@ -45,7 +45,7 @@ public class Advertising implements Serializable {
 	int Price;
 	String Type;
 	
-	@ManyToOne
-	private Women WomenAd;
+	//@ManyToOne
+	//private Women WomenAd;
 	
 }

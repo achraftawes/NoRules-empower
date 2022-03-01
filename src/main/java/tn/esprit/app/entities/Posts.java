@@ -59,8 +59,8 @@ public class Posts implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="PostA")
 	private Set<Admin> Admins;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="PostW")
-	private Set<Women> Womens;
+	//@OneToMany(cascade = CascadeType.ALL, mappedBy="PostW")
+	//private Set<Women> Womens;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="PostCo")
 	private Set<Comments> Comments;

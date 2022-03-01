@@ -1,13 +1,13 @@
 package tn.esprit.app.service;
 
-import java.util.List;
+import java.util.List; 
 
 import tn.esprit.app.entities.Admin;
 import tn.esprit.app.entities.Advertising;
 import tn.esprit.app.entities.Chat;
 import tn.esprit.app.entities.Comments;
 import tn.esprit.app.entities.Posts;
-import tn.esprit.app.entities.Women;
+
 
 public interface IProjet {
 	List<Admin> retrieveAllAdmins();
@@ -69,16 +69,6 @@ public interface IProjet {
 	Posts retrievePosts(Long idPost);
 	
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	
-	List<Women> retrieveAllWomens();
-
-	Women addWomen(Women Women);
-
-	void deleteWomen(Long idWomen);
-
-	Women updateWomen(Women Women);
-
-	Women retrieveWomen(Long idWomen);
 	
 	
 	

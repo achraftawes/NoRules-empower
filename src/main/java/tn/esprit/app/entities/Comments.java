@@ -42,8 +42,8 @@ public class Comments implements Serializable {
 	@ManyToOne
 	private Admin AdminC;
 	
-	@ManyToOne
-	private Women WomenC;
+	//@ManyToOne
+	//private Women WomenC;
 	
 	@ManyToOne
 	private Posts PostCo;

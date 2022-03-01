@@ -43,8 +43,8 @@ public class Chat implements Serializable {
 	@JsonIgnore
 	Set<Admin> Admin;
 	
-	@ManyToMany(mappedBy = "chatW", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
-	@JsonIgnore
-	Set<Women> women;
+	//@ManyToMany(mappedBy = "chatW", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+	//@JsonIgnore
+	//Set<Women> women;
 	
 }

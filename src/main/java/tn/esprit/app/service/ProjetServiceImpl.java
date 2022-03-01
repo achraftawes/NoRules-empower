@@ -1,6 +1,6 @@
 package tn.esprit.app.service;
 
-import java.util.List; 
+import java.util.List;  
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,13 +11,13 @@ import tn.esprit.app.entities.Advertising;
 import tn.esprit.app.entities.Chat;
 import tn.esprit.app.entities.Comments;
 import tn.esprit.app.entities.Posts;
-import tn.esprit.app.entities.Women;
+
 import tn.esprit.app.repository.AdminRepository;
 import tn.esprit.app.repository.AdvertisingRepository;
 import tn.esprit.app.repository.ChatRepository;
 import tn.esprit.app.repository.CommentsRepository;
 import tn.esprit.app.repository.PostsRepository;
-import tn.esprit.app.repository.WomenRepository;
+
 
 
 
@@ -43,8 +43,7 @@ public class ProjetServiceImpl implements IProjet{
 	@Autowired
 	PostsRepository postrepo;
 	
-	@Autowired
-	WomenRepository womenrepo;
+
 	
 	@Override
 	public List<Admin> retrieveAllAdmins() {
@@ -225,38 +224,7 @@ public class ProjetServiceImpl implements IProjet{
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	@Override
-	public List<Women> retrieveAllWomens() {
-		List<Women> Women =(List<Women>) womenrepo.findAll();
-		for (Women Womens : Women ) {
-	  log.info("Women : "+ Womens );
-		}
-		return Women ;
-	}
 
-	@Override
-	public Women addWomen(Women Women) {
-		womenrepo.save(Women);
-		return Women;
-	}
-
-	@Override
-	public void deleteWomen(Long idWomen) {
-		womenrepo.deleteById(idWomen);
-		
-	}
-
-	@Override
-	public Women updateWomen(Women Women) {
-		womenrepo.save(Women);
-		return Women ;
-	}
-
-	@Override
-	public Women retrieveWomen(Long idWomen) {
-		Women Women=womenrepo.findById(idWomen).get();
-		return Women;
-	}
 	
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	
