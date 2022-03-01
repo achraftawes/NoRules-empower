@@ -29,7 +29,7 @@ public class JobProposer  implements Serializable {
 	private String firstNameWomen;
 	private String lastNameWomen;
 	private String emailWomen;
-	private Integer numero; 
+	private Integer numero;    
 	@OneToMany( mappedBy="jobproposer")
 	@JsonIgnore
 	private Set<JobOffers> joboffers;

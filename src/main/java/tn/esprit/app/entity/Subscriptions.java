@@ -30,7 +30,6 @@ public class Subscriptions  implements Serializable{
 	private Date StratDate;
 	@Temporal(TemporalType.DATE)
 	private Date EndDate;
-	private Float Price;
 	private String Type;
 	@OneToOne
 	private Women women ;
